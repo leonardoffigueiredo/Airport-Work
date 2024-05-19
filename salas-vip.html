@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link href="fontawesome-free/css/all.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VLR Airport - SALAS VIP</title>
+    <link rel="stylesheet" href="/assets/style-sala-vip.css">
+    <link rel="shortcut icon" href="/images/icon-2.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.scss">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+    <!--INICIO DA HEADER-->
+    <nav id="navbar" class="">
+        <div class="nav-wrapper">
+            <!-- Navbar Logo -->
+            <div class="logo">
+                <a href="#home"><i class="fa-solid fa-plane"></i><strong style="color: #ffffff;"> VLE</strong>
+                    <span style="color: rgb(0, 153, 255);">Airport</span> </a>
+            </div>
+
+            <ul id="menu">
+                <li><a href="index.html">Home</a></li><!--
+                -->
+                <li><a href="#services">Passagens</a></li><!--
+                -->
+                <li><a href="#about">Sobre</a></li><!--
+                -->
+                <li><a href="#contact">Contato</a></li>
+                <button id="loginBtn">Login</button>
+
+            </ul>
+        </div>
+    </nav>
+
+    <br>
+
+    <!--FIM DA HEADER-->
+
+    <!--INICIO POP-UP DE LOGIN-->
+
+    <!-- Pop-up de login -->
+    <div class="popup-wrapper" id="popupWrapper" style="display: none;">
+        <div class="popup-content">
+            <div class="container" id="container">
+                <div class="form-container sign-up-container">
+                    <form action="#">
+                        <h1>Criar sua conta</h1>
+                        <input type="text" placeholder="Nome" />
+                        <input type="email" placeholder="E-mail" />
+                        <input type="password" placeholder="Senha" />
+                        <button>Entrar</button>
+                    </form>
+                </div>
+                <div class="form-container sign-in-container">
+                    <form action="#">
+                        <h1>Login</h1>
+                        <input type="email" placeholder="Email" />
+                        <input type="password" placeholder="Senha" />
+                        <a href="#" class="esqueceu" onclick="showAlert()">Esqueceu sua senha?</a>
+                        <button>Entrar</button>
+                    </form>
+                </div>
+                <div class="overlay-container">
+                    <div class="overlay">
+                        <div class="overlay-panel overlay-left">
+                            <h1>Bem-Vindo novamente!</h1>
+                            <p>Para se manter conectado, faça login com suas informações</p>
+                            <button class="ghost" id="signIn">Login</button>
+                        </div>
+                        <div class="overlay-panel overlay-right">
+                            <h1>Olá, amigo!</h1>
+                            <p>Insira seus dados e comece sua jornada conosco</p>
+                            <button class="ghost" id="signUp">Cadastre-se</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <a href="#" class="close-btn" id="closeBtn">&times;</a>
+        </div>
+    </div>
+    <!--FIM DO POP-UP DE LOGIN-->
+
+
+    <main>
+        <h1>Salas VIP</h1>
+        <p>Conheça as salas VIP disponíveis no VLR Airport.</p><br>
+        <hr>
+        <h1>Terminal 1 </h1>
+        <h6>W LOUNGE</h6>
+        <img src="/images/lounge-01.png" alt="">
+        <h6>Terminal 1</h6>
+        <p>– Mezanino </p>
+        <hr>
+        <br>
+        <p>24h - Diariamente
+            Tel: (11) 91372-2659
+            Email: info@wpremiumlounge.com
+            Redes Sociais: @wpremiumlounge</p>
+        <br>
+        <hr><br>
+        <p>O <span class="highlight">W Lounge São Paulo</span> (GRU) é a sala exclusiva do <span
+                class="highlight">Terminal T1</span>.
+            <span class="highlight">Elegância, conforto e exclusividade</span> são as principais qualidades que nossos
+            lounges transmitem. O espaço é
+            acolhedor e permite aos clientes desfrutar de uma <span class="highlight">experiência maravilhosa</span>,
+            desde o momento da sua chegada ao
+            aeroporto, até a preparação para o embarque.
+            O <span class="highlight">W Premium Group</span> conta com programas de acesso à sala VIP, como: <span
+                class="highlight">Lounge key</span>, <span class="highlight">Priority Pass</span> e <span
+                class="highlight">Visa Airport Companion</span>.
+
+            * Você deve baixar o aplicativo do programa que deseja usar e verificar todas as condições de acesso.
+
+            O Lounge também conta com parceiros diretos: <span class="highlight">C6 Bank</span>, <span
+                class="highlight">Inter</span>, <span class="highlight">Sisprime</span> e <span
+                class="highlight">Credicoamo</span>.
+            Os clientes também podem adquirir o acesso com o pagamento diretamente na recepção. O valor é de <span
+                class="highlight">R$ 180,00 reais</span>
+            e inclui uma variada oferta gastronômica local (também há opções sem glúten disponíveis), um menu de
+            bebidas incluindo <span class="highlight">bebidas alcoólicas</span>, refrigerantes e bebidas quentes.
+            Oferece tomadas para carregadores em
+            toda a sala, <span class="highlight">WiFi</span> e <span class="highlight">ducha</span> (o serviço de ducha
+            é um serviço extra que o cliente pode adicionar à sua compra).
+        </p>
+        <br>
+        <hr>
+        <br>
+        <h1>Terminal 2 </h1>
+        <h6>PLAZA PREMIUM LOUNGE</h6>
+        <img src="/images/lounge-02.png" alt="">
+        <h6>Terminal 2​ – Área de embarque doméstico </h6>
+        <p>– Mezanino </p>
+        <hr>
+        <p> 05h às 23h​ - Diariamente | ​Central de reservas e informações: 11 93420-4493 - brazil@plaza-network.com
+            | Plaza Premium Lounge (Domestic Departures, Terminal 2) Plaza Premium Lounge</p>
+
+        <p>Um lounge para todos os viajantes, independente da companhia aérea, classe de voo ou status do seu cartão de
+            crédito. <span class="highlight">Saiba mais sobre o Plaza Premium Lounge aqui</span>.
+
+            Com uma <span class="highlight">vista de tirar o fôlego</span>, este lounge é uma <span
+                class="highlight">obra-prima arquitetônica de design moderno e sustentabilidade</span>, proporcionando o
+            equilíbrio perfeito entre um <span class="highlight">espaço de trabalho</span> e de <span
+                class="highlight">descanso</span>, e de <span class="highlight">entretenimento</span> e <span
+                class="highlight">experiência gastronômica</span>. As ofertas do lounge incluem uma ampla seleção de
+            <span class="highlight">comidas e bebidas</span>, contendo desde <span class="highlight">pratos
+                quentes</span> e <span class="highlight">alimentos frescos</span> a uma grande variedade de <span
+                class="highlight">refrigerantes e bebidas alcoólicas</span>. Também temos <span
+                class="highlight">chuveiros</span>, <span class="highlight">Wi-Fi de alta velocidade</span>, <span
+                class="highlight">estações de trabalho</span>, <span class="highlight">espaço Kids</span>, <span
+                class="highlight">canais de TV</span>, <span class="highlight">jornais internacionais</span> e <span
+                class="highlight">revistas digitais</span> e, para quem precisa de um pouco mais de privacidade,
+            oferecemos uma confortável e exclusiva <span class="highlight">sala de conferências</span>, ideal para
+            reuniões.
+
+            * A tarifa para adultos é de <span class="highlight">R$ 215,00</span> com 3 horas de utilização e <span
+                class="highlight">R$ 140</span> para uma hora de acesso.
+            * Os clientes <span class="highlight">AMEX emitido no exterior</span>, <span class="highlight">Capital One
+                (Venture)</span> Visa Airport Companion App e <span class="highlight">DragonPass</span> podem desfrutar
+            de acesso complementar.
+        </p>
+        <br>
+        <hr>
+        <br>
+        <h1>Terminal 3 </h1>
+        <h6>ESPAÇO BANCO SAFRA </h6>
+        <img src="/images/lounge-03.png" alt="">
+        <h6>Terminal 3​ –  Área de embarque internacional (Mezanino) </h6>
+        <hr>
+        <p>  ​24h - Diariamente.
+            ​ Tel: (11) 2445-7339 / 7338 - lounge@gru.com.br</p>
+
+            <p>O Espaço <span class="highlight">Banco Safra</span> do <span class="highlight">GRU Airport</span> é acessível aos clientes <span class="highlight">Banco Safra Visa Infinite</span> e passageiros viajando de <span class="highlight">primeira classe</span> ou <span class="highlight">executiva</span> das companhias aéreas <span class="highlight">TAP</span>, <span class="highlight">Lufthansa</span>, <span class="highlight">Swiss</span>, <span class="highlight">Turkish Airlines</span>, <span class="highlight">United Airlines</span>, <span class="highlight">Copa Airlines</span>, <span class="highlight">Air Canada</span>, <span class="highlight">Air China</span>, <span class="highlight">South African</span>, <span class="highlight">ITA Airways</span> e <span class="highlight">Emirates</span>. Clientes dos programa <span class="highlight">Priority Pass</span> também têm acesso ao lounge (restrição das 14hs às 23hs).
+
+                Preparamos um <span class="highlight">plano especial</span> para que nossos clientes tenham uma experiência acolhedora durante seu trajeto. Contamos com <span class="highlight">área de descanso</span> (relax zone), <span class="highlight">wi-fi</span> e <span class="highlight">serviço de chuveiros</span> com <span class="highlight">amenities</span> e <span class="highlight">toalhas</span>. O nosso <span class="highlight">cardápio</span> contempla uma variedade de <span class="highlight">bebidas frias</span>, <span class="highlight">quentes</span> e <span class="highlight">alcoólicas</span>. No <span class="highlight">buffet</span> dispomos de uma variedade de <span class="highlight">frutas</span>, <span class="highlight">saladas</span>, <span class="highlight">queijos</span>, <span class="highlight">frios</span>, <span class="highlight">doces</span>, <span class="highlight">pratos quentes</span>, <span class="highlight">sopas</span> e sempre uma <span class="highlight">opção vegetariana</span>.
+                Estamos localizados na área de <span class="highlight">embarque internacional</span> do <span class="highlight">Terminal 3</span>, logo após o controle de passaporte. Para o acesso é necessário que o check-in já tenha sido realizado, tendo em mãos o cartão de embarque e bagagens despachadas. O tempo de permanência é de até 4 horas.
+                
+                Oferecemos um <span class="highlight">plano especial</span> para os clientes não elegíveis através das categorias citadas acima. É possível adquirir o acesso diretamente na recepção do lounge com todos os serviços inclusos (de acordo com a disponibilidade no momento):
+                
+                <span class="highlight">Day pass</span> período de 4 horas - <span class="highlight">USD45</span>
+                
+                <span class="highlight">Crianças</span> até 02 anos acompanhadas de adultos são isentas, a partir de 02 anos de idade são as mesmas condições do adulto pagante.</p>                
+        <br>
+        <hr>
+    </main>
+
+
+
+
+    <footer class="main_footer container1">
+
+        <div class="content">
+            <div class="colfooter">
+
+                <h3 class="titleFooter"> Menu</h3>
+
+                <ul>
+
+                    <li><a href="#" title="Página Inícial">Página Inícial</a></li>
+                    <li><a href="#" title="Passagens">Passagens</a></li>
+                    <li><a href="#" title="Sobre a Empresa">Sobre Nós</a></li>
+                    <li><a href="#" title="Fale Conosco">Fale Conosco</a></li>
+
+                </ul>
+            </div><!--Col Footer 1-->
+            <div class="colfooter">
+
+                <h3 class="titleFooter"> Contato</h3>
+                <p><i class="icon icon-mail"></i> contato@valore.airport.com</p>
+                <p><i class="icon icon-phone"></i> 11 93201-2181</p>
+                <p><i class="icon icon-whatsapp"></i> 11 12345-6789</p>
+            </div><!--Col Footer 2-->
+            <div class="colfooter">
+
+                <h3 class="titleFooter"> Redes Sociais</h3>
+
+                <a href="#" class="botao"><span> <i class="fa fa-twitter" aria-hidden="true"></i></span></a>
+                <a href="#" class="botao"><span> <i class="fa fa-facebook"></i> </span></a>
+                <a href="#" class="botao"><span> <i class="fa fa-instagram"></i> </span></a>
+            </div><!--Col Footer 3-->
+            <div class="clear"></div>
+
+        </div><!--Contant-->
+        <div class="main_footer_copy">
+
+            <p class="m-b-footer"> Valore Airport &copy; 2024, todos os direitos reservados.</p>
+        </div>
+    </footer>
+</body>
+<script src="script.js"></script>
+
+</html>

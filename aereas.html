@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link href="fontawesome-free/css/all.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VLR Airport - Companhias Aéreas</title>
+    <link rel="stylesheet" href="/assets/style-aereas.css">
+    <link rel="shortcut icon" href="/images/icon-2.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.scss">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@900;400;500;700&display=swap" rel="stylesheet">
+
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <!--INICIO DA HEADER-->
+    <nav id="navbar" class="">
+        <div class="nav-wrapper">
+            <!-- Navbar Logo -->
+            <div class="logo">
+                <a href="#home"><strong style="color: #ffffff;"> VLE</strong>
+                    <span style="color: rgb(0, 153, 255);">Airport</span> </a>
+            </div>
+
+            <ul id="menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#services">Passagens</a></li>
+                <li><a href="#about">Sobre</a></li>
+                <li><a href="#contact">Contato</a></li>
+                <button id="loginBtn">Login</button>
+            </ul>
+        </div>
+    </nav>
+
+    <br>
+
+    <!--FIM DA HEADER-->
+
+    <!--INICIO POP-UP DE LOGIN-->
+    <div class="popup-wrapper" id="popupWrapper" style="display: none;">
+        <div class="popup-content">
+            <div class="container" id="container">
+                <div class="form-container sign-up-container">
+                    <form action="#">
+                        <h1>Criar sua conta</h1>
+                        <input type="text" placeholder="Nome" />
+                        <input type="email" placeholder="E-mail" />
+                        <input type="password" placeholder="Senha" />
+                        <button>Entrar</button>
+                    </form>
+                </div>
+                <div class="form-container sign-in-container">
+                    <form action="#">
+                        <h1>Login</h1>
+                        <input type="email" placeholder="Email" />
+                        <input type="password" placeholder="Senha" />
+                        <a href="#" class="esqueceu" onclick="showAlert()">Esqueceu sua senha?</a>
+                        <button>Entrar</button>
+                    </form>
+                </div>
+                <div class="overlay-container">
+                    <div class="overlay">
+                        <div class="overlay-panel overlay-left">
+                            <h1>Bem-Vindo novamente!</h1>
+                            <p>Para se manter conectado, faça login com suas informações</p>
+                            <button class="ghost" id="signIn">Login</button>
+                        </div>
+                        <div class="overlay-panel overlay-right">
+                            <h1>Olá, amigo!</h1>
+                            <p>Insira seus dados e comece sua jornada conosco</p>
+                            <button class="ghost" id="signUp">Cadastre-se</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <a href="#" class="close-btn" id="closeBtn">&times;</a>
+        </div>
+    </div>
+    <!--FIM DO POP-UP DE LOGIN-->
+
+    <div class="container">
+        <div class="header">
+            <h2>Localize sua Companhia Aérea</h2>
+        </div>
+        <div class="terminals">
+            <button onclick="filterTerminal('all')">Todos os Terminais</button>
+            <button onclick="filterTerminal('Terminal 1')">Terminal 1</button>
+            <button onclick="filterTerminal('Terminal 2')">Terminal 2</button>
+            <button onclick="filterTerminal('Terminal 3')">Terminal 3</button>
+        </div>
+        <table class="table">
+            <tr>
+                <th>Companhia Aérea</th>
+                <th>Terminal</th>
+                <th>Piso</th>
+            </tr>
+            <tr class="terminal-row" data-terminal="Terminal 2">
+                <td><img src="https://www.gru.com.br/pt/PublishingImages/logos/cias-aereas/ARG.gif"
+                        alt="Aerolineas Argentinas"> Aerolineas Argentinas</td>
+                <td class="terminal">Terminal 2</td>
+                <td class="check-in">Check-in C</td>
+                <td class="links"><a href="https://www.aerolineas.com.ar/pt-br">Acesse o site</a></td>
+                <td class="links"><a onclick="showInfoPopup()">Mais informações</a></td>
+            </tr>
+            <tr class="terminal-row" data-terminal="Terminal 2">
+                <td><img src="https://www.gru.com.br/pt/PublishingImages/logos/cias-aereas/AMX.gif" alt="Aeroméxico">
+                    Aeroméxico</td>
+                <td class="terminal">Terminal 2</td>
+                <td class="check-in">Check-in C</td>
+                <td class="links"><a href="https://aeromexico.com/pt-br">Acesse o site</a></td>
+                <td class="links"><a onclick="showInfoPopup2()">Mais informações</a></td>
+            </tr>
+            <tr class="terminal-row" data-terminal="Terminal 3">
+                <td><img src="https://www.gru.com.br/pt/PublishingImages/logos/cias-aereas/ACA.gif" alt="Air Canada">
+                    Air Canada</td>
+                <td class="terminal">Terminal 3</td>
+                <td class="check-in">Check-in H</td>
+                <td class="links"><a href="http://www.aircanada.com.br/beta/">Acesse o site</a></td>
+                <td class="links"><a onclick="showInfoPopup3()">Mais informações</a></td>
+            </tr>
+            <tr class="terminal-row" data-terminal="Terminal 2">
+                <td><img src="https://www.gru.com.br/pt/PublishingImages/logos/cias-aereas/AEA.gif" alt="Air Europa">
+                    Air Europa</td>
+                <td class="terminal">Terminal 2</td>
+                <td class="check-in">Check-in C</td>
+                <td class="links"><a href="https://www.aireuropa.com/">Acesse o site</a></td>
+                <td class="links"><a onclick="showInfoPopup4()">Mais informações</a></td>
+            </tr>
+            <tr class="terminal-row" data-terminal="Terminal 3">
+                <td><img src="https://www.gru.com.br/pt/PublishingImages/logos/cias-aereas/AFR.gif" alt="Air France">
+                    <span style="margin-left: 15px;">Air France</span>
+                </td>
+                <td class="terminal">Terminal 3</td>
+                <td class="check-in">Check-in H</td>
+                <td class="links"><a href="https://wwws.airfrance.com.br/">Acesse o site</a></td>
+                <td class="links"><a onclick="showInfoPopup5()">Mais informações</a></td>
+            </tr>
+            <tr class="terminal-row" data-terminal="Terminal 3">
+                <td><img src="https://www.gru.com.br/pt/PublishingImages/logos/cias-aereas/AAL.gif"
+                        alt="American Airlines"> <span style="margin-left: 15px;">American Airlines</span></td>
+                <td class="terminal">Terminal 3</td>
+                <td class="check-in">Check-in H</td>
+                <td class="links"><a href="https://www.aa.com.br/homePage.do?locale=pt_BR">Acesse o site</a></td>
+                <td class="links"><a onclick="showInfoPopup6()">Mais informações</a></td>
+            </tr>
+            <tr class="terminal-row" data-terminal="Terminal 2">
+                <td><img src="https://www.gru.com.br/pt/PublishingImages/Lists/CompanhiasAereas/AllItems/1122x326%20(1).png"
+                        alt="Avianca"> <span style="margin-left: 15px;">Avianca</span></td>
+                <td class="terminal">Terminal 2</td>
+                <td class="check-in">Check-in B</td>
+                <td class="links"><a href="https://www.avianca.com/es/">Acesse o site</a></td>
+                <td class="links"><a onclick="showInfoPopup7()">Mais informações</a></td>
+            </tr>
+            <tr class="terminal-row" data-terminal="Terminal 2">
+                <td><img src="https://www.gru.com.br/pt/PublishingImages/logos/cias-aereas/BOV.gif"
+                        alt="Boliviana de Aviacion"> <span style="margin-left: 15px;">Boliviana de Aviacion</span></td>
+                <td class="terminal">Terminal 2</td>
+                <td class="check-in">Check-in C</td>
+                <td class="links"><a href="https://www.boa.bo/BoAWebsite">Acesse o site</a></td>
+                <td class="links"><a onclick="showInfoPopup8()">Mais informações</a></td>
+            </tr>
+            <tr class="terminal-row" data-terminal="Terminal 3">
+                <td><img src="https://www.gru.com.br/pt/PublishingImages/logos/cias-aereas/BAW.gif"
+                        alt="British Airways"> <span style="margin-left: 15px;">British Airways</span></td>
+                <td class="terminal">Terminal 3</td>
+                <td class="check-in">Check-in G</td>
+                <td class="links"><a href="https://www.britishairways.com/travel/home/public/pt_br/">Acesse o site</a>
+                </td>
+                <td class="links"><a onclick="showInfoPopup9()">Mais informações</a></td>
+            </tr>
+            <tr class="terminal-row" data-terminal="Terminal 3">
+                <td><img src="https://www.gru.com.br/pt/PublishingImages/logos/cias-aereas/CMP.gif"
+                        alt="Copa Airlines"><span style="margin-left: 15px;"> Copa Airlines</span></td>
+                <td class="terminal">Terminal 3</td>
+                <td class="check-in">Check-in G</td>
+                <td class="links"><a href="https://www.copaair.com/pt-gs/">Acesse o site</a></td>
+                <td class="links"><a onclick="showInfoPopup10()">Mais informações</a></td>
+            </tr>
+        </table>
+    </div>
+
+    <!--POP-UP DE INFORMAÇÕES-->
+    <div class="popup-wrapper2" id="infoPopup">
+        <div class="popup-content2">
+            <button class="close-btn2" onclick="closeInfoPopup()">&times;</button>
+            <img src="https://www.gru.com.br/pt/PublishingImages/logos/cias-aereas/ARG.gif" alt="Aerolineas Argentinas">
+            <h2>Aerolineas Argentinas</h2>
+            <p><strong>Terminal:</strong> Terminal 2</p>
+            <p><strong>Piso:</strong> Check-in C</p>
+            <p><strong>Telefone:</strong> Central de Atendimento ao Cliente: 0800 761 0254</p>
+            <p><strong>Website:</strong> <a href="https://www.aerolineas.com.ar"
+                    target="_blank">www.aerolineas.com.ar</a></p>
+            <h3>Atenção</h3>
+            <p>Para informações sobre bagagem, documentação para embarque, Compra de passagens aérea, alteração ou
+                cancelamento de voo, consulte a central de atendimento ao cliente da empresa aérea.</p>
+            <p>A companhia aérea atende no check-in C.</p>
+        </div>
+    </div>
+
+
+    <!--SEGUNDO -->
+    <div class="popup-wrapper2" id="infoPopup2">
+        <div class="popup-content2">
+            <button class="close-btn2" onclick="closeInfoPopup2()">&times;</button>
+            <img src="https://www.gru.com.br/pt/PublishingImages/logos/cias-aereas/AMX.gif" alt="Aerolineas Argentinas">
+            <h2>Aeroméxico</h2>
+            <p><strong>Terminal:</strong> Terminal 2</p>
+            <p><strong>Piso:</strong> Check-in C</p>
+            <p><strong>Telefone:</strong> Central de Atendimento ao Cliente: 0800 771 6535
+            </p>
+            <p><strong>Website:</strong> <a href="https://www.aeromexico.com" target="_blank"> www.aeromexico.com</a>
+            </p>
+            <h3>Atenção</h3>
+            <p>Para informações sobre bagagem, documentação para embarque, compra de passagens aéreas, alteração ou
+                cancelamento de voo, consultar a Central de Atendimento ao Cliente da empresa aérea.
+            </p>
+        </div>
+    </div>
+
+    <!-- TERCEIRO  -->
+    <div class="popup-wrapper2" id="infoPopup3">
+        <div class="popup-content2">
+            <button class="close-btn2" onclick="closeInfoPopup3()">&times;</button>
+            <img src="https://www.gru.com.br/pt/PublishingImages/logos/cias-aereas/ACA.gif" alt="Aerolineas Argentinas">
+            <h2>Air Canada</h2>
+            <p><strong>Terminal:</strong> Terminal 3</p>
+            <p><strong>Piso:</strong> Check-in H</p>
+            <p><strong>Telefone:</strong> Central de Atendimento ao Cliente: 0800 770 9250
+            </p>
+            <p><strong>Website:</strong> <a href="https://www.aircanada.com.br" target="_blank">https://www.aircanada.com.br</a></p>
+            <h3>Atenção</h3>
+            <p>Para informações sobre bagagem, documentação para embarque, compra de passagem aérea, alteração ou
+                cancelamento de voo, consulte a Central de Atendimento ao Cliente da empresa aérea.
+            </p>
+        </div>
+    </div>
+
+      <!-- QUARTO  -->
+      <div class="popup-wrapper2" id="infoPopup4">
+        <div class="popup-content2">
+            <button class="close-btn2" onclick="closeInfoPopup4()">&times;</button>
+            <img src="https://www.gru.com.br/pt/PublishingImages/logos/cias-aereas/AEA.gif" alt="Aerolineas Argentinas">
+            <h2>Air Europa</h2>
+            <p><strong>Terminal:</strong> Terminal 2</p>
+            <p><strong>Piso:</strong> Check-in C</p>
+            <p><strong>Telefone:</strong>Central de Atendimento ao Cliente: 0800 580 2919 | Horário: 8h às 18h de segunda a sexta-feira
+
+            </p>
+            <p><strong>Website:</strong> <a href="https://www.aireuropa.com/" target="_blank">https://www.aireuropa.com/</a></p>
+            <h3>Atenção</h3>
+            <p>Para informações sobre bagagem, documentação para embarque, compra de passagem aérea, alteração ou
+                cancelamento de voo, consulte a Central de Atendimento ao Cliente da empresa aérea.
+            </p>
+        </div>
+    </div>
+
+    <!-- QUINTO  -->
+    <div class="popup-wrapper2" id="infoPopup5">
+        <div class="popup-content2">
+            <button class="close-btn2" onclick="closeInfoPopup5()">&times;</button>
+            <img src="https://www.gru.com.br/pt/PublishingImages/logos/cias-aereas/AFR.gif" alt="Aerolineas Argentinas">
+            <h2>Air France</h2>
+            <p><strong>Terminal:</strong> Terminal 3</p>
+            <p><strong>Piso:</strong> Check-in H</p>
+            <p><strong>Telefone:</strong>Central de Atendimento ao Cliente: 0800 724 8352 | WhatsApp: +33 6 99 38 57 20
+
+
+            </p>
+            <p><strong>Website:</strong> <a href="https://www.airfrance.com.br" target="_blank">https://www.airfrance.com.br</a></p>
+            <h3>Atenção</h3>
+            <p>Para informações sobre bagagem, documentação para embarque, compra de passagem aérea, alteração ou
+                cancelamento de voo, consulte a Central de Atendimento ao Cliente da empresa aérea.
+            </p>
+        </div>
+    </div>
+
+    <!-- SEXTO  -->
+    <div class="popup-wrapper2" id="infoPopup6">
+        <div class="popup-content2">
+            <button class="close-btn2" onclick="closeInfoPopup6()">&times;</button>
+            <img src="https://www.gru.com.br/pt/PublishingImages/logos/cias-aereas/AAL.gif" alt="Aerolineas Argentinas">
+            <h2>American Airlines</h2>
+            <p><strong>Terminal:</strong> Terminal 3</p>
+            <p><strong>Piso:</strong> Check-in H</p>
+            <p><strong>Telefone:</strong>Central de Atendimento ao Cliente: 0800 595 0710
+            </p>
+            <p><strong>Website:</strong> <a href="https://www.aa.com.br/" target="_blank">https://www.aa.com.br/</a></p>
+            <h3>Atenção</h3>
+            <p>Para informações sobre bagagem, documentação para embarque, compra de passagem aérea, alteração ou
+                cancelamento de voo, consulte a Central de Atendimento ao Cliente da empresa aérea.
+            </p>
+        </div>
+    </div>
+
+     <!-- SÉTIMO  -->
+     <div class="popup-wrapper2" id="infoPopup7">
+        <div class="popup-content2">
+            <button class="close-btn2" onclick="closeInfoPopup7()">&times;</button>
+            <img src="https://www.gru.com.br/pt/PublishingImages/Lists/CompanhiasAereas/AllItems/1122x326%20(1).png" alt="Aerolineas Argentinas">
+            <h2>Avianca</h2>
+            <p><strong>Terminal:</strong> Terminal 2</p>
+            <p><strong>Piso:</strong> Check-in B</p>
+            <p><strong>Telefone:</strong>Central de Atendimento ao Cliente: 0800-8918-668/ Reclamações e sugestões :0800 761 8222
+            </p>
+            <p><strong>Website:</strong> <a href="https://www.avianca.com.br" target="_blank">https://www.avianca.com.br</a></p>
+            <h3>Atenção</h3>
+            <p>Para informações sobre bagagem, documentação para embarque, compra de passagem aérea, alteração ou
+                cancelamento de voo, consulte a Central de Atendimento ao Cliente da empresa aérea.
+            </p>
+        </div>
+    </div>
+
+    <!-- OITAVO  -->
+    <div class="popup-wrapper2" id="infoPopup8">
+        <div class="popup-content2">
+            <button class="close-btn2" onclick="closeInfoPopup8()">&times;</button>
+            <img src="https://www.gru.com.br/pt/PublishingImages/logos/cias-aereas/BOV.gif" alt="Aerolineas Argentinas">
+            <h2>Boliviana de Aviacion</h2>
+            <p><strong>Terminal:</strong> Terminal 2</p>
+            <p><strong>Piso:</strong> Check-in C</p>
+            <p><strong>Telefone:</strong>Central de Atendimento ao Cliente: (11) 3138-6060
+            </p>
+            <p><strong>Website:</strong> <a href="https://www.boa.bo" target="_blank">https://www.boa.bo</a></p>
+            <h3>Atenção</h3>
+            <p>Para informações sobre bagagem, documentação para embarque, compra de passagem aérea, alteração ou
+                cancelamento de voo, consulte a Central de Atendimento ao Cliente da empresa aérea.
+            </p>
+        </div>
+    </div>
+
+    <!-- NONO  -->
+    <div class="popup-wrapper2" id="infoPopup9">
+        <div class="popup-content2">
+            <button class="close-btn2" onclick="closeInfoPopup9()">&times;</button>
+            <img src="https://www.gru.com.br/pt/PublishingImages/logos/cias-aereas/BAW.gif" alt="Aerolineas Argentinas">
+            <h2>British Airways</h2>
+            <p><strong>Terminal:</strong> Terminal 3</p>
+            <p><strong>Piso:</strong> Check-in G</p>
+            <p><strong>Telefone:</strong>Central de Atendimento ao Cliente: 0800 886 82 66
+            </p>
+            <p><strong>Website:</strong> <a href="https://www.britishairways.com" target="_blank">https://www.britishairways.com</a></p>
+            <h3>Atenção</h3>
+            <p>Para informações sobre bagagem, documentação para embarque, compra de passagem aérea, alteração ou
+                cancelamento de voo, consulte a Central de Atendimento ao Cliente da empresa aérea.
+            </p>
+        </div>
+    </div>
+
+     <!-- DÉCIMO  -->
+     <div class="popup-wrapper2" id="infoPopup10">
+        <div class="popup-content2">
+            <button class="close-btn2" onclick="closeInfoPopup10()">&times;</button>
+            <img src="https://www.gru.com.br/pt/PublishingImages/logos/cias-aereas/CMP.gif" alt="Aerolineas Argentinas">
+            <h2>Copa Airlines</h2>
+            <p><strong>Terminal:</strong> Terminal 3</p>
+            <p><strong>Piso:</strong> Check-in G</p>
+            <p><strong>Telefone:</strong>Central de Atendiemnto ao Cliente:: 0800 886 2672
+            </p>
+            <p><strong>Website:</strong> <a href="https://www.copaair.com" target="_blank">https://www.copaair.com</a></p>
+            <h3>Atenção</h3>
+            <p>Para informações sobre bagagem, documentação para embarque, compra de passagem aérea, alteração ou
+                cancelamento de voo, consulte a Central de Atendimento ao Cliente da empresa aérea.
+            </p>
+        </div>
+    </div>
+    <!--FIM DO POP-UP DE INFORMAÇÕES-->
+
+
+
+
+    <footer class="main_footer container1">
+        <div class="content">
+            <div class="colfooter">
+                <h3 class="titleFooter"> Menu</h3>
+                <ul>
+                    <li><a href="index.html" title="Página Inícial">Página Inícial</a></li>
+                    <li><a href="#" title="Passagens">Passagens</a></li>
+                    <li><a href="#" title="Sobre a Empresa">Sobre Nós</a></li>
+                    <li><a href="#" title="Fale Conosco">Fale Conosco</a></li>
+                </ul>
+            </div>
+            <div class="colfooter">
+                <h3 class="titleFooter"> Contato</h3>
+                <p><i class="icon icon-mail"></i> contato@valore.airport.com</p>
+                <p><i class="icon icon-phone"></i> 11 93201-2181</p>
+                <p><i class="icon icon-whatsapp"></i> 11 12345-6789</p>
+            </div>
+            <div class="colfooter">
+                <h3 class="titleFooter"> Redes Sociais</h3>
+                <a href="#" class="botao"><span> <i class="fa fa-twitter" aria-hidden="true"></i></span></a>
+                <a href="#" class="botao"><span> <i class="fa fa-facebook"></i> </span></a>
+                <a href="#" class="botao"><span> <i class="fa fa-instagram"></i> </span></a>
+            </div>
+            <div class="clear"></div>
+        </div>
+        <div class="main_footer_copy">
+            <p class="m-b-footer"> Valore Airport &copy; 2024, todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Aerolineas Argentinas
+        function showInfoPopup() {
+            document.getElementById('infoPopup').style.display = 'flex';
+        }
+
+        function closeInfoPopup() {
+            document.getElementById('infoPopup').style.display = 'none';
+        }
+
+        // AeroMéxico
+
+        function showInfoPopup2() {
+            document.getElementById('infoPopup2').style.display = 'flex';
+        }
+
+        function closeInfoPopup2() {
+            document.getElementById('infoPopup2').style.display = 'none';
+        }
+
+        //AirCanada
+
+        function showInfoPopup3() {
+            document.getElementById('infoPopup3').style.display = 'flex';
+        }
+
+        function closeInfoPopup3() {
+            document.getElementById('infoPopup3').style.display = 'none';
+        }
+
+        //AirEuropa
+
+        function showInfoPopup4() {
+            document.getElementById('infoPopup4').style.display = 'flex';
+        }
+
+        function closeInfoPopup4() {
+            document.getElementById('infoPopup4').style.display = 'none';
+        }
+
+        //AirFrance
+
+        function showInfoPopup5() {
+            document.getElementById('infoPopup5').style.display = 'flex';
+        }
+
+        function closeInfoPopup5() {
+            document.getElementById('infoPopup5').style.display = 'none';
+        }
+
+        //América Airlines
+
+        function showInfoPopup6() {
+            document.getElementById('infoPopup6').style.display = 'flex';
+        }
+
+        function closeInfoPopup6() {
+            document.getElementById('infoPopup6').style.display = 'none';
+        }
+
+        //Avianca
+
+        function showInfoPopup7() {
+            document.getElementById('infoPopup7').style.display = 'flex';
+        }
+
+        function closeInfoPopup7() {
+            document.getElementById('infoPopup7').style.display = 'none';
+        }
+
+        //Boliviana de Aviacion
+
+        function showInfoPopup8() {
+            document.getElementById('infoPopup8').style.display = 'flex';
+        }
+
+        function closeInfoPopup8() {
+            document.getElementById('infoPopup8').style.display = 'none';
+        }
+
+        //Britshi Airways
+
+        function showInfoPopup9() {
+            document.getElementById('infoPopup9').style.display = 'flex';
+        }
+
+        function closeInfoPopup9() {
+            document.getElementById('infoPopup9').style.display = 'none';
+        }
+
+        //Copa Airlines
+
+        function showInfoPopup10() {
+            document.getElementById('infoPopup10').style.display = 'flex';
+        }
+
+        function closeInfoPopup10() {
+            document.getElementById('infoPopup10').style.display = 'none';
+        }
+
+
+        function filterTerminal(terminal) {
+            const rows = document.querySelectorAll('.terminal-row');
+            rows.forEach(row => {
+                if (terminal === 'all') {
+                    row.classList.remove('hidden');
+                } else {
+                    if (row.getAttribute('data-terminal') === terminal) {
+                        row.classList.remove('hidden');
+                    } else {
+                        row.classList.add('hidden');
+                    }
+                }
+            });
+        }
+
+
+    </script>
+    <script src="script.js"></script>
+</body>
+
+</html>

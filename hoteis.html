@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link href="fontawesome-free/css/all.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VLR Airport - SALAS VIP</title>
+    <link rel="stylesheet" href="/assets/style-hoteis.css">
+    <link rel="shortcut icon" href="/images/icon-2.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.scss">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+    <!--INICIO DA HEADER-->
+    <nav id="navbar" class="">
+        <div class="nav-wrapper">
+            <!-- Navbar Logo -->
+            <div class="logo">
+                <a href="#home"><strong style="color: #ffffff;"> VLE</strong>
+                    <span style="color: rgb(0, 153, 255);">Airport</span> </a>
+            </div>
+
+            <ul id="menu">
+                <li><a href="index.html">Home</a></li><!--
+                -->
+                <li><a href="#services">Passagens</a></li><!--
+                -->
+                <li><a href="#about">Sobre</a></li><!--
+                -->
+                <li><a href="#contact">Contato</a></li>
+                <button id="loginBtn">Login</button>
+
+            </ul>
+        </div>
+    </nav>
+
+    <br>
+
+    <!--FIM DA HEADER-->
+
+    <!--INICIO POP-UP DE LOGIN-->
+
+    <!-- Pop-up de login -->
+    <div class="popup-wrapper" id="popupWrapper" style="display: none;">
+        <div class="popup-content">
+            <div class="container" id="container">
+                <div class="form-container sign-up-container">
+                    <form action="#">
+                        <h1>Criar sua conta</h1>
+                        <input type="text" placeholder="Nome" />
+                        <input type="email" placeholder="E-mail" />
+                        <input type="password" placeholder="Senha" />
+                        <button>Entrar</button>
+                    </form>
+                </div>
+                <div class="form-container sign-in-container">
+                    <form action="#">
+                        <h1>Login</h1>
+                        <input type="email" placeholder="Email" />
+                        <input type="password" placeholder="Senha" />
+                        <a href="#" class="esqueceu" onclick="showAlert()">Esqueceu sua senha?</a>
+                        <button>Entrar</button>
+                    </form>
+                </div>
+                <div class="overlay-container">
+                    <div class="overlay">
+                        <div class="overlay-panel overlay-left">
+                            <h1>Bem-Vindo novamente!</h1>
+                            <p>Para se manter conectado, faça login com suas informações</p>
+                            <button class="ghost" id="signIn">Login</button>
+                        </div>
+                        <div class="overlay-panel overlay-right">
+                            <h1>Olá, amigo!</h1>
+                            <p>Insira seus dados e comece sua jornada conosco</p>
+                            <button class="ghost" id="signUp">Cadastre-se</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <a href="#" class="close-btn" id="closeBtn">&times;</a>
+        </div>
+    </div>
+    <!--FIM DO POP-UP DE LOGIN-->
+
+
+    <main>
+        <h1>Hóteis</h1>
+        <p>​​​​​​​​​​ No GRU Airport você encontra​ opções de hotéis para descansar, passar a no​ite ou até mesmo
+            trabalhar.
+        </p>
+        <hr>
+        <img src="/images/hotel-01.png" alt="">
+        <p><strong><span class="highlight">TRYP BY WINDHAM SÃO PAULO GUARULHOS AIRPORT</strong></span><br>
+            O <span class="highlight">Tryp by Wyndham São Paulo Guarulhos Airport</span> orgulha-se de ser o primeiro e
+            único hotel no Hemisfério Sul situado na área restrita de um terminal de aeroporto. Disponibiliza 80 quartos
+            para os passageiros que estão em trânsito. Além disso, possui uma <span class="highlight">área para
+                fumantes</span> (valor de acesso: <span class="highlight">US$37</span>).</p>
+        <hr>
+        <p><span class="highlight">Terminal 3</span> - <span class="highlight">Área de Embarque Internacional</span> -
+            <span class="highlight">Nível 1
+                – Área de Trânsito</span>.
+            Horário de atendimento: <span class="highlight">24 horas</span>
+            <span class="highlight">(11) 2445-8100</span> - <span class="highlight"><a href="https://www.wyndhamhotels.com/tryp">www.tryphotels.com</a></span>
+        </p>
+
+        <hr>
+        <img src="/images/fast-sleep.png" alt="">
+        <p><strong><span class="highlight">FAST SLEEP - REPOUSO E BANHO</strong></span><br>
+            Administração: <span class="highlight">SLAVIEIRO HOTÉIS</span><br>
+            O hotel conta com <span class="highlight">52​ quartos e 13 suítes</span> e está localizado em área pública
+            do Terminal 2.</p>
+        <p><span class="highlight">Terminal 2</span> - <span class="highlight">Desembarque Doméstico Leste</span>.<br>
+            Horário de atendimento: <span class="highlight">24 horas</span><br>
+            (11) 2445-2356<br>
+            <span class="highlight"><a href="https://www.fastsleep.com.br/">www.fastsleep.com.br</a></span>
+        </p>
+        <hr>
+        <img src="/images/hotel-02.png" alt="">
+        <p><span class="highlight">PULLMAN - SÃO PAULO GUARULHOS AIRPORT</span><br>
+            Com uma excelente localização ao lado do Aeroporto, o hotel conta com 377 quartos, e está localizado há apenas 30 minutos de São Paulo.  ​</p>
+            <p>
+                ​Horário de atendimento: <span class="highlight">24 horas</span> 
+                Rod. Helio Smidt S/N - Acesso Base Aérea Cumbica, Guarulhos.
+                ​ <span class="highlight">(11) 2124-5800</span>&nbsp;-&nbsp;
+                ​ <span class="highlight"><a href="https://pullman.accor.com/pt-br/brasil/index.shtml">www.pullmanhotels.com</a></span>
+            </p>
+            
+    </main>
+
+
+
+
+    <footer class="main_footer container1">
+
+        <div class="content">
+            <div class="colfooter">
+
+                <h3 class="titleFooter"> Menu</h3>
+
+                <ul>
+
+                    <li><a href="index.html" title="Página Inícial">Página Inícial</a></li>
+                    <li><a href="#" title="Passagens">Passagens</a></li>
+                    <li><a href="#" title="Sobre a Empresa">Sobre Nós</a></li>
+                    <li><a href="#" title="Fale Conosco">Fale Conosco</a></li>
+
+                </ul>
+            </div><!--Col Footer 1-->
+            <div class="colfooter">
+
+                <h3 class="titleFooter"> Contato</h3>
+                <p><i class="icon icon-mail"></i> contato@valore.airport.com</p>
+                <p><i class="icon icon-phone"></i> 11 93201-2181</p>
+                <p><i class="icon icon-whatsapp"></i> 11 12345-6789</p>
+            </div><!--Col Footer 2-->
+            <div class="colfooter">
+
+                <h3 class="titleFooter"> Redes Sociais</h3>
+
+                <a href="#" class="botao"><span> <i class="fa fa-twitter" aria-hidden="true"></i></span></a>
+                <a href="#" class="botao"><span> <i class="fa fa-facebook"></i> </span></a>
+                <a href="#" class="botao"><span> <i class="fa fa-instagram"></i> </span></a>
+            </div><!--Col Footer 3-->
+            <div class="clear"></div>
+
+        </div><!--Contant-->
+        <div class="main_footer_copy">
+
+            <p class="m-b-footer"> Valore Airport &copy; 2024, todos os direitos reservados.</p>
+        </div>
+    </footer>
+</body>
+<script src="script.js"></script>
+
+</html>
