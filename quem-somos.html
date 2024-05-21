@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link href="fontawesome-free/css/all.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VLR Airport - Companhias Aéreas</title>
+    <link rel="stylesheet" href="/assets/style-quem-somos.css">
+    <link rel="shortcut icon" href="/images/icon-2.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.scss">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@900;400;500;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!--INICIO DA HEADER-->
+    <nav id="navbar" class="">
+        <div class="nav-wrapper">
+            <!-- Navbar Logo -->
+            <div class="logo">
+                <a href="quem-somos.html"><strong style="color: #ffffff;"> VALORE</strong>
+                    <span style="color: rgb(0, 153, 255);">Airport</span> </a>
+            </div>
+
+            <ul id="menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#services">Passagens</a></li>
+                <li><a href="quem-somos.html">Sobre</a></li>
+                <li><a href="#contact">Contato</a></li>
+                <button id="loginBtn">Login</button>
+            </ul>
+        </div>
+    </nav>
+
+    <br>
+
+    <!--FIM DA HEADER-->
+
+    <!--INICIO POP-UP DE LOGIN-->
+    <div class="popup-wrapper" id="popupWrapper" style="display: none;">
+        <div class="popup-content">
+            <div class="container" id="container">
+                <div class="form-container sign-up-container">
+                    <form action="#">
+                        <h1>Criar sua conta</h1>
+                        <input type="text" placeholder="Nome" />
+                        <input type="email" placeholder="E-mail" />
+                        <input type="password" placeholder="Senha" />
+                        <button>Entrar</button>
+                    </form>
+                </div>
+                <div class="form-container sign-in-container">
+                    <form action="#">
+                        <h1>Login</h1>
+                        <input type="email" placeholder="Email" />
+                        <input type="password" placeholder="Senha" />
+                        <a href="#" class="esqueceu" onclick="showAlert()">Esqueceu sua senha?</a>
+                        <button>Entrar</button>
+                    </form>
+                </div>
+                <div class="overlay-container">
+                    <div class="overlay">
+                        <div class="overlay-panel overlay-left">
+                            <h1>Bem-Vindo novamente!</h1>
+                            <p>Para se manter conectado, faça login com suas informações</p>
+                            <button class="ghost" id="signIn">Login</button>
+                        </div>
+                        <div class="overlay-panel overlay-right">
+                            <h1>Olá, amigo!</h1>
+                            <p>Insira seus dados e comece sua jornada conosco</p>
+                            <button class="ghost" id="signUp">Cadastre-se</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <a href="#" class="close-btn" id="closeBtn">&times;</a>
+        </div>
+    </div>
+    <!--FIM DO POP-UP DE LOGIN-->
+
+
+    <!--QUEM SOMOS-->
+
+    <div class="containerqs">
+        <div class="headerqs">
+            <h1>Valore Internacional Airport</h1>
+            <p>o maior e mais tecnológico aeroporto do planeta, proporcionando uma experiência pré-voo incomparável!</p>
+        </div>
+        <div class="contentqs">
+            <div class="image-containerqs">
+                <img src="/images/antigamente.png" alt="Mother and child">
+            </div>
+            <div class="text-containerqs">
+                <h2>Como tudo iniciou?</h2>
+                <p>No alvorecer da era moderna da aviação, em 15 de abril de 1987, o grupo KLIGK lançou as bases do que
+                    viria a ser o Valore Airport. Naquela época, o cenário aeroportuário era marcado por instalações
+                    antiquadas e processos lentos. Movido pela visão de transformação, o grupo KLIGK ousou sonhar com um
+                    aeroporto que desafiasse os limites do possível.
+
+                    Com a determinação de um pioneiro, os fundadores e sua equipe de visionários construíram não apenas
+                    uma
+                    estrutura de concreto e aço, mas um símbolo de excelência e inovação. Nos primeiros dias, o Valore
+                    Airport era uma utopia em um mundo de aeroportos desatualizados.</p>
+            </div>
+        </div>
+
+        <div class="contentqs">
+            <div class="image-containerqs">
+                <img src="/images/hoje_em_dia.png" alt="Mother and child">
+            </div>
+            <div class="text-containerqs">
+                <h2>Como é hoje em dia?</h2>
+                <p>Atualmente, o Valore Airport é muito mais do que um simples ponto de partida e chegada. É um símbolo
+                    de excelência e inovação na aviação mundial. Com infraestrutura de última geração e tecnologia de
+                    ponta, o aeroporto oferece uma experiência de viagem incomparável aos seus passageiros.
+
+                    Desde o momento em que os viajantes colocam os pés no terminal, são recebidos por uma atmosfera de
+                    sofisticação e conforto. As instalações modernas e espaçosas proporcionam conveniência e fluidez em
+                    cada etapa da jornada. Dos sistemas de check-in automatizados aos lounges premium, cada detalhe foi
+                    cuidadosamente projetado para elevar o padrão de qualidade.</p>
+            </div>
+        </div>
+
+        <div class="branch-costsqs">
+            <h2>Fotografias</h2>
+            <div class="cost-comparisonqs">
+                <div class="big-banksqs">
+                    <img src="/images/antigamente02.png" alt="Big Banks">
+                </div>
+                <div class="vsqs">
+                    <h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h3>
+                </div>
+                <div class="daveqs">
+                    <img src="/images/hoje_em_dia02.png" alt="Dave">
+                </div>
+            </div>
+            <div class="cost-comparisonqs">
+                <div class="big-banksqs">
+                    <img src="/images/antigamente03.png" alt="Big Banks">
+                    <h3>1991</h3>
+                </div>
+                <div class="vsqs">
+                    <h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h3>
+                </div>
+                <div class="daveqs">
+                    <img src="/images/hoje_em_dia03.png" alt="Dave">
+                    <h3>2024</h3>
+                </div>
+            </div>
+        </div>
+
+        <div class="featuresqs">
+            <div class="features-textqs">
+                <h2>Presença Global</h2>
+                <p>O Valore Airport orgulhosamente estende sua influência por diversos países ao redor do globo. Com
+                    terminais estrategicamente localizados em <strong>mais de 65 países</strong>, nós oferecemos uma
+                    rede global de conexões para atender às necessidades de nossos passageiros.</p>
+            </div>
+            <div class="features-imageqs">
+                <img src="/images/LOGO-COMPLETA.png" alt="Man with car">
+            </div>
+        </div>
+    </div>
+
+    <!--FIM DO QUEM SOMOS-->
+
+
+    <footer class="main_footer container1">
+        <div class="content">
+            <div class="colfooter">
+                <h3 class="titleFooter"> Menu</h3>
+                <ul>
+                    <li><a href="index.html" title="Página Inícial">Página Inícial</a></li>
+                    <li><a href="#" title="Passagens">Passagens</a></li>
+                    <li><a href="#" title="Sobre a Empresa">Sobre Nós</a></li>
+                    <li><a href="#" title="Fale Conosco">Entre em Contato</a></li>
+                </ul>
+            </div>
+            <div class="colfooter">
+                <h3 class="titleFooter"> Contato</h3>
+                <p><i class="icon icon-mail"></i> contato@valore.airport.com</p>
+                <p><i class="icon icon-phone"></i> 11 93201-2181</p>
+                <p><i class="icon icon-whatsapp"></i> 11 12345-6789</p>
+            </div>
+            <div class="colfooter">
+                <h3 class="titleFooter"> Redes Sociais</h3>
+                <a href="https://www.instagram.com/valore_airport/" class="botao"><span> <i class="fa fa-instagram"></i> </span></a>
+            </div>
+            <div class="clear"></div>
+        </div>
+        <div class="main_footer_copy">
+            <p class="m-b-footer"> Valore Airport &copy; 2024, todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>
