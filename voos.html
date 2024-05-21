@@ -85,10 +85,11 @@
     <!--FIM DO POP-UP DE LOGIN-->
 
 
-    
+
     <div class="container99">
         <h1>Consulte chegadas e partidas</h1>
-        <p>Consulte chegadas e partidas pelo nome da companhia aérea, pelo terminal, pelo número do voo ou pelo nome da cidade.</p>
+        <p>Consulte chegadas e partidas pelo nome da companhia aérea, pelo terminal, pelo número do voo ou pelo nome da
+            cidade.</p>
         <div class="filter-container">
             <button id="partidasBtn">Partidas</button>
             <button id="chegadasBtn">Chegadas</button>
@@ -319,89 +320,91 @@
 
 
 
-    <footer class="main_footer container1">
-        <div class="content">
-            <div class="colfooter">
-                <h3 class="titleFooter"> Menu</h3>
-                <ul>
-                    <li><a href="index.html" title="Página Inícial">Página Inícial</a></li>
-                    <li><a href="#" title="Passagens">Passagens</a></li>
-                    <li><a href="#" title="Sobre a Empresa">Sobre Nós</a></li>
-                    <li><a href="entre-em-contato.html" title="Fale Conosco">Entre em Contato</a></li>
-                </ul>
+        <footer class="main_footer container1">
+            <div class="content">
+                <div class="colfooter">
+                    <h3 class="titleFooter"> Menu</h3>
+                    <ul>
+                        <li><a href="index.html" title="Página Inícial">Página Inícial</a></li>
+                        <li><a href="voos.html" title="Passagens">Voos</a></li>
+                        <li><a href="quem-somos.html" title="Sobre a Empresa">Sobre Nós</a></li>
+                        <li><a href="entre-em-contato.html" title="Fale Conosco">Entre em Contato</a></li>
+                    </ul>
+                </div>
+                <div class="colfooter">
+                    <h3 class="titleFooter"> Contato</h3>
+                    <p><i class="icon icon-mail"></i> contato@valore.airport.com</p>
+                    <p><i class="icon icon-phone"></i> 11 93201-2181</p>
+                    <p><i class="icon icon-whatsapp"></i> 11 12345-6789</p>
+                </div>
+                <div class="colfooter">
+                    <h3 class="titleFooter"> Redes Sociais</h3>
+                    <a href="https://www.instagram.com/valore_airport/" class="botao"><span><img src="/images/x.png"
+                                alt="Logo-Instagram">
+                        </span></a>
+                </div>
+                <div class="clear"></div>
             </div>
-            <div class="colfooter">
-                <h3 class="titleFooter"> Contato</h3>
-                <p><i class="icon icon-mail"></i> contato@valore.airport.com</p>
-                <p><i class="icon icon-phone"></i> 11 93201-2181</p>
-                <p><i class="icon icon-whatsapp"></i> 11 12345-6789</p>
+            <div class="main_footer_copy">
+                <p class="m-b-footer"> Valore Airport &copy; 2024, todos os direitos reservados.</p>
             </div>
-            <div class="colfooter">
-                <h3 class="titleFooter"> Redes Sociais</h3>
-                <a href="https://www.instagram.com/valore_airport/" class="botao"><span><img src="/images/x.png" alt="Logo-Instagram">
-                    </span></a>
-            </div>
-            <div class="clear"></div>
-        </div>
-        <div class="main_footer_copy">
-            <p class="m-b-footer"> Valore Airport &copy; 2024, todos os direitos reservados.</p>
-        </div>
-    </footer>
+        </footer>
 </body>
 <script src="script.js"></script>
 <script>
-   document.addEventListener('DOMContentLoaded', function () {
-    const partidasBtn = document.getElementById('partidasBtn');
-    const chegadasBtn = document.getElementById('chegadasBtn');
-    const companyFilter = document.getElementById('companyFilter');
-    const terminalFilter = document.getElementById('terminalFilter');
-    const flightFilter = document.getElementById('flightFilter');
-    const partidasTable = document.getElementById('partidas');
-    const chegadasTable = document.getElementById('chegadas');
+    document.addEventListener('DOMContentLoaded', function () {
+        const partidasBtn = document.getElementById('partidasBtn');
+        const chegadasBtn = document.getElementById('chegadasBtn');
+        const companyFilter = document.getElementById('companyFilter');
+        const terminalFilter = document.getElementById('terminalFilter');
+        const flightFilter = document.getElementById('flightFilter');
+        const partidasTable = document.getElementById('partidas');
+        const chegadasTable = document.getElementById('chegadas');
 
-    function filterFlights() {
-        const selectedCompany = companyFilter.value.toLowerCase();
-        const selectedTerminal = terminalFilter.value.toLowerCase();
-        const searchText = flightFilter.value.toLowerCase();
+        function filterFlights() {
+            const selectedCompany = companyFilter.value.toLowerCase();
+            const selectedTerminal = terminalFilter.value.toLowerCase();
+            const searchText = flightFilter.value.toLowerCase();
 
-        let activeTable = partidasTable.style.display === 'none' ? chegadasTable : partidasTable;
-        let rows = activeTable.getElementsByTagName('tr');
+            let activeTable = partidasTable.style.display === 'none' ? chegadasTable : partidasTable;
+            let rows = activeTable.getElementsByTagName('tr');
 
-        for (let i = 0; i < rows.length; i++) {
-            let company = rows[i].dataset.company.toLowerCase();
-            let terminal = rows[i].dataset.terminal.toLowerCase();
-            let flightInfo = rows[i].innerText.toLowerCase();
+            for (let i = 0; i < rows.length; i++) {
+                let company = rows[i].dataset.company.toLowerCase();
+                let terminal = rows[i].dataset.terminal.toLowerCase();
+                let flightInfo = rows[i].innerText.toLowerCase();
 
-            if ((selectedCompany === '' || company.includes(selectedCompany)) &&
-                (selectedTerminal === '' || terminal.includes(selectedTerminal)) &&
-                (searchText === '' || flightInfo.includes(searchText))) {
-                rows[i].style.display = '';
-            } else {
-                rows[i].style.display = 'none';
+                if ((selectedCompany === '' || company.includes(selectedCompany)) &&
+                    (selectedTerminal === '' || terminal.includes(selectedTerminal)) &&
+                    (searchText === '' || flightInfo.includes(searchText))) {
+                    rows[i].style.display = '';
+                } else {
+                    rows[i].style.display = 'none';
+                }
             }
         }
-    }
 
-    partidasBtn.addEventListener('click', function () {
-        chegadasTable.style.display = 'none';
-        partidasTable.style.display = '';
-        filterFlights();
+        partidasBtn.addEventListener('click', function () {
+            chegadasTable.style.display = 'none';
+            partidasTable.style.display = '';
+            filterFlights();
+        });
+
+        chegadasBtn.addEventListener('click', function () {
+            partidasTable.style.display = 'none';
+            chegadasTable.style.display = '';
+            filterFlights();
+        });
+
+        companyFilter.addEventListener('change', filterFlights);
+        terminalFilter.addEventListener('change', filterFlights);
+        flightFilter.addEventListener('input', filterFlights);
+
+        // Initial filter setup
+        partidasBtn.click();
     });
-
-    chegadasBtn.addEventListener('click', function () {
-        partidasTable.style.display = 'none';
-        chegadasTable.style.display = '';
-        filterFlights();
-    });
-
-    companyFilter.addEventListener('change', filterFlights);
-    terminalFilter.addEventListener('change', filterFlights);
-    flightFilter.addEventListener('input', filterFlights);
-
-    // Initial filter setup
-    partidasBtn.click();
-});
 
 
 </script>
+
 </html>
