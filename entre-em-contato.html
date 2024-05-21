@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>VLR Airport - Companhias Aéreas</title>
-    <link rel="stylesheet" href="/assets/style-quem-somos.css">
+    <link rel="stylesheet" href="/assets/style-entre-em-contato.css">
     <link rel="shortcut icon" href="/images/icon-2.png" type="image/x-icon">
     <link rel="stylesheet" href="style.scss">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
@@ -82,91 +82,38 @@
     <!--FIM DO POP-UP DE LOGIN-->
 
 
-    <!--QUEM SOMOS-->
+    <!--ENTRE EM CONTATO-->
 
-    <div class="containerqs">
-        <div class="headerqs">
-            <h1>Valore Internacional Airport</h1>
-            <p>o maior e mais tecnológico aeroporto do planeta, proporcionando uma experiência pré-voo incomparável!</p>
-        </div>
-        <div class="contentqs">
-            <div class="image-containerqs">
-                <img src="/images/antigamente.png" alt="Mother and child">
+    <div class="contact-form">
+        <h1>Entre em contato</h1>
+        <div class="contact-info">
+            <div class="info-item">
+                <span class="icon">📍</span>
+                <p>Rodovia Hélio Smidt, Cumbica – Guarulhos – SP</p>
             </div>
-            <div class="text-containerqs">
-                <h2>Como tudo iniciou?</h2>
-                <p>No alvorecer da era moderna da aviação, em 15 de abril de 1987, o grupo KLIGK lançou as bases do que
-                    viria a ser o Valore Airport. Naquela época, o cenário aeroportuário era marcado por instalações
-                    antiquadas e processos lentos. Movido pela visão de transformação, o grupo KLIGK ousou sonhar com um
-                    aeroporto que desafiasse os limites do possível.
-
-                    Com a determinação de um pioneiro, os fundadores e sua equipe de visionários construíram não apenas
-                    uma
-                    estrutura de concreto e aço, mas um símbolo de excelência e inovação. Nos primeiros dias, o Valore
-                    Airport era uma utopia em um mundo de aeroportos desatualizados.</p>
+            <div class="info-item">
+                <span class="icon">📞</span>
+                <p>+11 98765-4321</p>
+            </div>
+            <div class="info-item">
+                <span class="icon">✉️</span>
+                <p>contato@valore.airport.com</p>
             </div>
         </div>
-
-        <div class="contentqs">
-            <div class="image-containerqs">
-                <img src="/images/hoje_em_dia.png" alt="Mother and child">
-            </div>
-            <div class="text-containerqs">
-                <h2>Como é hoje em dia?</h2>
-                <p>Atualmente, o Valore Airport é muito mais do que um simples ponto de partida e chegada. É um símbolo
-                    de excelência e inovação na aviação mundial. Com infraestrutura de última geração e tecnologia de
-                    ponta, o aeroporto oferece uma experiência de viagem incomparável aos seus passageiros.
-
-                    Desde o momento em que os viajantes colocam os pés no terminal, são recebidos por uma atmosfera de
-                    sofisticação e conforto. As instalações modernas e espaçosas proporcionam conveniência e fluidez em
-                    cada etapa da jornada. Dos sistemas de check-in automatizados aos lounges premium, cada detalhe foi
-                    cuidadosamente projetado para elevar o padrão de qualidade.</p>
-            </div>
-        </div>
-
-        <div class="branch-costsqs">
-            <h2>Fotografias</h2>
-            <div class="cost-comparisonqs">
-                <div class="big-banksqs">
-                    <img src="/images/antigamente02.png" alt="Big Banks">
-                </div>
-                <div class="vsqs">
-                    <h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h3>
-                </div>
-                <div class="daveqs">
-                    <img src="/images/hoje_em_dia02.png" alt="Dave">
-                </div>
-            </div>
-            <div class="cost-comparisonqs">
-                <div class="big-banksqs">
-                    <img src="/images/antigamente03.png" alt="Big Banks">
-                    <h3>1991</h3>
-                </div>
-                <div class="vsqs">
-                    <h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h3>
-                </div>
-                <div class="daveqs">
-                    <img src="/images/hoje_em_dia03.png" alt="Dave">
-                    <h3>2024</h3>
-                </div>
-            </div>
-        </div>
-
-        <div class="featuresqs">
-            <div class="features-textqs">
-                <h2>Presença Global</h2>
-                <p>O Valore Airport orgulhosamente estende sua influência por diversos países ao redor do globo. Com
-                    terminais estrategicamente localizados em <strong>mais de 65 países</strong>, nós oferecemos uma
-                    rede global de conexões para atender às necessidades de nossos passageiros.</p>
-            </div>
-            <div class="features-imageqs">
-                <img src="/images/LOGO-COMPLETA.png" alt="Man with car">
-            </div>
-        </div>
+        <h2>Fale Conosco</h2>
+        <form>
+            <br>
+            <input type="text" name="name" placeholder="Nome" required>
+            <input type="email" name="email" placeholder="E-mail" required>
+            <input type="text" name="subject" placeholder="Assunto" required>
+            <textarea name="message" placeholder="Mensagem" maxlength="600" required></textarea>
+            <div id="char-count"><strong>0 / 600</strong></div>
+            <button type="submit">Enviar Mensagem</button>
+            <br><br>
+        </form>
     </div>
 
-    <!--FIM DO QUEM SOMOS-->
-
+    <!--FIM ENTRE EM CONTATO-->
 
     <footer class="main_footer container1">
         <div class="content">
@@ -197,7 +144,24 @@
         </div>
     </footer>
 
+    <script>
+   document.addEventListener("DOMContentLoaded", function () {
+    const messageInput = document.querySelector('textarea[name="message"]');
+    const charCount = document.getElementById('char-count');
 
+    messageInput.addEventListener('input', function () {
+        const currentLength = messageInput.value.length;
+        charCount.textContent = `${currentLength} / 600`;
+
+        if (currentLength >= 600) {
+            charCount.classList.add('red');
+        } else {
+            charCount.classList.remove('red');
+        }
+    });
+});
+
+    </script>
     <script src="script.js"></script>
 </body>
 

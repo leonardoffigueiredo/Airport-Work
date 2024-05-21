@@ -851,3 +851,7 @@ a {
     color: #09ff00;
     background-color: rgb(47, 0, 255);
 }
+
+footer img {
+    width: 35px;
+}

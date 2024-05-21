@@ -921,3 +921,8 @@ input {
     border-right: 0;
   }
 }
+
+
+footer img {
+  width: 35px;
+}

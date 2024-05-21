@@ -830,3 +830,7 @@ ul {
     height: auto;
     border-radius: 10px;
 }
+
+footer img {
+    width: 35px;
+}
